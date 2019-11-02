@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mage.crm.dao.OrderDetailDao">
+    <select id="queryOrderDetailsByOrderId" parameterType="int" resultType="com.mage.crm.vo.OrderDetail">
+        select id,goods_name as 'goodsName',goods_num as 'goodsNum',unit as 'nuit',price,sum
+        from t_order_details where order_id=#{orderId} and is_valid=1
+    </select>
+</mapper>
